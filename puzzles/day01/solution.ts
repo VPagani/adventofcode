@@ -1,25 +1,50 @@
 const input = await Deno.readTextFile("./input.txt");
 
-const elves = input
-	.split("\n\n")
-	.map(inv =>
-		inv.split("\n").map(cal => parseInt(cal))
-	);
-
-function sum(array: number[]) {
-	return array.reduce((a, b) => a + b, 0);
+export default function solution(input: string) {
+	const elves = input
+		.split("\n\n")
+		.map(inv =>
+			inv.split("\n").map(cal => parseInt(cal))
+		);
+	
+	function sum(array: number[]) {
+		return array.reduce((a, b) => a + b, 0);
+	}
+	
+	// Part 1
+	console.log("Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?");
+	
+	const elvesCalories = elves.map(sum);
+	
+	const elvesCaloriesSorted = elvesCalories.sort((a, b) => b - a);
+	
+	console.log(elvesCaloriesSorted[0]);
+	
+	// Part 2
+	console.log("Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?");
+	
+	console.log(sum(elvesCaloriesSorted.slice(0, 3)));
 }
 
-// Part 1
-console.log("Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?");
+const test =
+`1000
+2000
+3000
 
-const elvesCalories = elves.map(sum);
+4000
 
-const elvesCaloriesSorted = elvesCalories.sort((a, b) => b - a);
+5000
+6000
 
-console.log(elvesCaloriesSorted[0]);
+7000
+8000
+9000
 
-// Part 2
-console.log("Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?");
+10000`;
 
-console.log(sum(elvesCaloriesSorted.slice(0, 3)));
+console.log("Test:");
+solution(test);
+
+console.log("");
+console.log("\nInput:");
+solution(input);
