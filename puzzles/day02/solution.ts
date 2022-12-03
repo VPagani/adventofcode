@@ -1,11 +1,8 @@
-
-
-const input = await Deno.readTextFile("./input.txt");
-
+import { answer, question, section } from "../utils.ts";
 
 export default function solution(input: string) {
 	// Part 1
-	console.log("> What would your total score be if everything goes exactly according to your strategy guide?");
+	question("What would your total score be if everything goes exactly according to your strategy guide?");
 	
 	enum Shape {
 		Rock,
@@ -75,10 +72,10 @@ export default function solution(input: string) {
 		return score + outcomeScore + shapeScore;
 	}, 0);
 	
-	console.log("=", score);
+	answer(score);
 	
 	// Part 2
-	console.log("> Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?")
+	question("Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?")
 	
 	const STRATEGY_OUTCOME = {
 		X: Outcome.Lose,
@@ -113,16 +110,18 @@ export default function solution(input: string) {
 		return score + outcomeScore + shapeScore;
 	}, 0);
 
-	console.log("=", strategyScore);
+	answer(strategyScore);
 }
 
-const test =
+const example =
 `A Y
 B X
 C Z`;
 
-console.log("Test:");
-solution(test);
+const input = await Deno.readTextFile("./input.txt");
 
-console.log("\nInput:");
+section("Example");
+solution(example);
+
+section("Input");
 solution(input);

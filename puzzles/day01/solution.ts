@@ -1,4 +1,4 @@
-const input = await Deno.readTextFile("./input.txt");
+import { answer, question, section } from "../utils.ts";
 
 export default function solution(input: string) {
 	const elves = input
@@ -12,21 +12,21 @@ export default function solution(input: string) {
 	}
 	
 	// Part 1
-	console.log("Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?");
+	question("Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?");
 	
 	const elvesCalories = elves.map(sum);
 	
 	const elvesCaloriesSorted = elvesCalories.sort((a, b) => b - a);
 	
-	console.log(elvesCaloriesSorted[0]);
+	answer(elvesCaloriesSorted[0]);
 	
 	// Part 2
-	console.log("Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?");
+	question("Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?");
 	
-	console.log(sum(elvesCaloriesSorted.slice(0, 3)));
+	answer(sum(elvesCaloriesSorted.slice(0, 3)));
 }
 
-const test =
+const example =
 `1000
 2000
 3000
@@ -42,9 +42,12 @@ const test =
 
 10000`;
 
-console.log("Test:");
-solution(test);
 
-console.log("");
-console.log("\nInput:");
+
+const input = await Deno.readTextFile("./input.txt");
+
+section("Example");
+solution(example);
+
+section("Input");
 solution(input);
