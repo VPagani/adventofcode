@@ -8,3 +8,4 @@
 - [Day 02: Rock Paper Scissors](./puzzles/day02/)
 - [Day 03: Rucksack Reorganization](./puzzles/day03/)
 - [Day 04: Camp Cleanup](./puzzles/day04/)
+- [Day 05: Supply Stacks](./puzzles/day05/)
