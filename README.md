@@ -9,3 +9,4 @@
 - [Day 03: Rucksack Reorganization](./puzzles/day03/)
 - [Day 04: Camp Cleanup](./puzzles/day04/)
 - [Day 05: Supply Stacks](./puzzles/day05/)
+- [Day 06: Tuning Trouble](./puzzles/day06/)
