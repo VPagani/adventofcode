@@ -10,3 +10,4 @@
 - [Day 04: Camp Cleanup](./puzzles/day04/)
 - [Day 05: Supply Stacks](./puzzles/day05/)
 - [Day 06: Tuning Trouble](./puzzles/day06/)
+- [Day 07: No Space Left On Device](./puzzles/day07/)
