@@ -12,3 +12,4 @@
 - [Day 06: Tuning Trouble](./puzzles/day06/)
 - [Day 07: No Space Left On Device](./puzzles/day07/)
 - [Day 08: Treetop Tree House](./puzzles/day08/)
+- [Day 09: Rope Bridge](./puzzles/day09/)
